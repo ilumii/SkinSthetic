@@ -116,9 +116,34 @@ handleImage = (reader) => {
         </div>
         {this.state.blackhead ? (
           <div>
-            <button> rendered!</button>
+            <p> These are blackheads!</p>
           </div>
         ): <div></div>}
+        {this.state.whitehead ? (
+          <div>
+            <p> These are whiteheads!</p>
+          </div>
+        ): <div></div>}   
+        {this.state.pigmentation ? (
+          <div>
+            <p> These are pigmentations!</p>
+          </div>
+        ): <div></div>}
+        {this.state.acne ? (
+          <div>
+            <p> This is acne!</p>
+          </div>
+        ): <div></div>}   
+        {this.state.dark_eye ? (
+          <div>
+            <p> These are dark circles!</p>
+          </div>
+        ): <div></div>}   
+        {this.state.scaring ? (
+          <div>
+            <p> These are scars!</p>
+          </div>
+        ): <div></div>}                                              
       </div>
     );
   }
