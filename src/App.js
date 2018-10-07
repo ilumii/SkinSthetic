@@ -85,19 +85,19 @@ handleImage = (reader) => {
   const b64 = reader.split(',', 2)[1];
   console.log(b64)
   app.models.predict({id: 'face', version:'974fb0b3fbe6432db23486e390a33d9c'}, {base64: b64}).then(
-    function(response) {
+    (response) => {
       console.log(response.outputs["0"].data.concepts["0"].id)
-      this.setState({flaw: response.outputs["0"].data.concepts["0"].id})
-      this.setState.flaw = true
-     // this.setState.response.outputs["0"].data.concepts["0"].id = true;
-
+      const key = response.outputs["0"].data.concepts["0"].id
+      if (key === 'blackhead'){
+        console.log('1')
+        this.setState({ blackhead: true})
+      }
     },
     function(err) {
       console.log(err)
     }
   );
 }
-
 
   render() {
     return (
@@ -113,12 +113,12 @@ handleImage = (reader) => {
             <i class="fa fa-cloud-upload"></i> Upload Image
           </label>
           <input id="file-upload" type="file" onChange={(f) => this.base64_get(f)}/>
-          {this.state.blackhead ? (
-            <div>
-              <button> hi there</button>
-            </div>
-          ): <div></div>}
         </div>
+        {this.state.blackhead ? (
+          <div>
+            <button> rendered!</button>
+          </div>
+        ): <div></div>}
       </div>
     );
   }
