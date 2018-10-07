@@ -4,62 +4,12 @@ import './App.css';
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({apiKey: '30bef0d580a442ebbdbc9c5e71c7b89e'});
-  // app.inputs.create([{
-  //      "url": "https://i.ytimg.com/vi/J0EYT994eXg/maxresdefault.jpg",
-  //      "concepts": [
-  //      { "id": "blackhead", "value": false },
-  //      { "id": "whitehead", "value": false },
-  //      { "id": "pigmentation", "value": false },
-  //      { "id": "acne", "value": false },
-  //      { "id": "dark_eye", "value": false },
-  //      { "id": "scaring", "value": false },
-  //      { "id": "wart", "value": true }
-  // ]}
-  //     ]).then(
-  //    createModel,
-  //    errorHandler
-  //  );
-
-  // function createModel(inputs) {
-  //   app.models.create('face', ["blackhead", "whitehead", "pigmentation", "acne", "dark_eye", "scaring", "wart"]).then(
-  //     trainModel,
-  //     errorHandler
-  //   );
-  // }
-
-  // function trainModel(model) {
-  //   model.train().then(
-  //     predictModel,
-  //     errorHandler
-  //   );
-  // }
-
-  // function predictModel(model) {
-  //   model.predict(['https://media.allure.com/photos/5ae38367b4825822d6ef7609/1:1/w_767/what-is-a-blackhead.jpg', 'http://www.howtoremovethat.com/wp-content/uploads/2013/06/whiteheads1.jpg']).then(
-  //     function(response) {
-  //       console.log(response);
-  //     }, errorHandler
-  //   );
-  // }
-
-  // function errorHandler(err) {
-  //  console.error(err);
-  // }
-
-  // app.models.predict({id: 'face', version:'25dd13e01bb04d7bafb61212e5ead7ec'}, 'https://www.caffeinamagazine.it/wp-content/uploads/2016/12/vulva2.jpg').then(
-  //   function(response) {
-  //     console.log(response)
-  //     console.log(response.outputs["0"].data.concepts["0"].id)
-  //   },
-  //   function(err) {
-  //     console.log(err)
-  //   }
-  // );
 
 class App extends Component {
   state ={
     img: "",
-    flaw: "",
+    home: true,
+    acnechart: false,
     blackhead: false,
     whitehead: false,
     pigmentation: false,
@@ -89,9 +39,59 @@ handleImage = (reader) => {
       console.log(response.outputs["0"].data.concepts["0"].id)
       const key = response.outputs["0"].data.concepts["0"].id
       if (key === 'blackhead'){
-        console.log('1')
         this.setState({ blackhead: true})
+        this.setState({ whitehead: false})
+        this.setState({ pigmentation: false})
+        this.setState({ acne: false})
+        this.setState({ dark_eye: false})
+        this.setState({ scaring: false})
+        this.setState({ home: false})
       }
+      else if (key === 'whitehead'){
+        this.setState({ whitehead: true})
+        this.setState({ blackhead: false})
+        this.setState({ pigmentation: false})
+        this.setState({ acne: false})
+        this.setState({ dark_eye: false})
+        this.setState({ scaring: false})
+        this.setState({ home: false})
+      }
+      else if (key === 'pigmentation'){
+        this.setState({ pigmentation: true})
+        this.setState({ blackhead: false})
+        this.setState({ whitehead: false})
+        this.setState({ acne: false})
+        this.setState({ dark_eye: false})
+        this.setState({ scaring: false})
+        this.setState({ home: false})
+      }
+      else if (key === 'acne'){
+        this.setState({ acne: true})
+        this.setState({ blackhead: false})
+        this.setState({ whitehead: false})
+        this.setState({ pigmentation: false})
+        this.setState({ dark_eye: false})
+        this.setState({ scaring: false})
+        this.setState({ home: false})
+      }
+      else if (key === 'dark_eye'){
+        this.setState({ dark_eye: true})
+        this.setState({ blackhead: false})
+        this.setState({ whitehead: false})
+        this.setState({ pigmentation: false})
+        this.setState({ acne: false})
+        this.setState({ scaring: false})
+        this.setState({ home: false})
+      }
+      else if (key === 'scaring'){
+        this.setState({ scaring: true})
+        this.setState({ blackhead: false})
+        this.setState({ whitehead: false})
+        this.setState({ pigmentation: false})
+        this.setState({ acne: false})
+        this.setState({ dark_eye: false})
+        this.setState({ home: false})
+      }      
     },
     function(err) {
       console.log(err)
@@ -99,51 +99,87 @@ handleImage = (reader) => {
   );
 }
 
+
+
   render() {
     return (
       <div className = "App">
         <div className = "Header">
-          <h1>Title</h1>
+          <h1>SkinSthetic</h1>
         </div>
-        <div className="adjust-image">
-            <img className="real-img" src={this.state.img} alt=''/>
-        </div>
-        <div className="adjust-button">
-          <label for="file-upload" class="custom-file-upload">
-            <i class="fa fa-cloud-upload"></i> Upload Image
-          </label>
-          <input id="file-upload" type="file" onChange={(f) => this.base64_get(f)}/>
-        </div>
+        <div className ="adjust.txt">
         {this.state.blackhead ? (
           <div>
-            <p> These are blackheads!</p>
+            <h2> These are blackheads! </h2>
+            <p>Blackheads are small bumps that appear on your skin due to clogged hair follicles.
+            Blackheads form when a clog or plug develops in the opening of hair follicles in your skin.
+            Each follicle contains one hair and a sebaceous gland that produces oil. It appears on the
+            back, chest, neck, arms and shoulders.</p>
           </div>
         ): <div></div>}
         {this.state.whitehead ? (
           <div>
-            <p> These are whiteheads!</p>
+            <h2> These are whiteheads!</h2>
+            <p> Whiteheads are a mild form of acne that appear as small, round, white bumps on the skin’s surface. 
+            This type of acne occurs when a pore becomes clogged with sebum, dead skin cells, and debris.
+            If this clogged pore is covered with a thin layer of skin, it appears white on its surface.
+            Whiteheads commonly appear on the face, shoulders, neck, chest, and back.</p>
           </div>
         ): <div></div>}   
         {this.state.pigmentation ? (
           <div>
-            <p> These are pigmentations!</p>
+            <h2> These are pigmentations!</h2>
+            <p> Skin pigmentations are uneven dark spots on the skin that is caused by sun exposure and UVA rays
+            which penetrates deep into your skin and cause aging. 
+            </p>
           </div>
         ): <div></div>}
         {this.state.acne ? (
           <div>
-            <p> This is acne!</p>
+            <h2> This is acne!</h2>
+            <p> Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells.
+            It often causes whiteheads, blackheads or pimples, and usually appears on the face, forehead, chest, upper back and shoulders. 
+            Acne is most common among teenagers, though it affects people of all ages. </p>    
+            </div>
+        ): <div></div>}   
+        {this.state.acnechart ? (
+          <div className = "adjust-image">
+
           </div>
         ): <div></div>}   
+        
         {this.state.dark_eye ? (
           <div>
-            <p> These are dark circles!</p>
+            <h2> These are dark circles!</h2>
+            <p> Dark circles are caused by fatigue, age, eye strain, allegries, dehydration, sun overexposure, and genetics.
+            They are often accompanied by eye bags, and they tend to make you look older than you look. </p>
           </div>
         ): <div></div>}   
         {this.state.scaring ? (
           <div>
-            <p> These are scars!</p>
+            <h2> These are scars!</h2>
+            <p>  A scar results from the biologic process of wound repair in the skin and other tissues. 
+            Most wounds, except for very minor ones, result in some degree of scarring.
+            Scars can result from accidents, diseases, skin conditions such as acne, or surgeries.</p>            
           </div>
-        ): <div></div>}                                              
+        ): <div></div>} 
+        </div>
+        <div className="adjust-image">
+            <img className="real-img" src={this.state.img} alt=''/>
+        </div>
+        {this.state.home ? (
+        <div>
+          <h3> Hello! Welcome to SkinSthetic! Our goal is to help you achieve healthier skin.
+          Through analyzing your face, we will show you information about prevalent type of skin
+          imperfection recognized by our program. To begin, please upload an image of your face!</h3> 
+        </div>
+        ): <div></div>}   
+        <div className="adjust-button">
+            <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-cloud-upload"></i> Upload Image
+          </label>
+          <input id="file-upload" type="file" onChange={(f) => this.base64_get(f)}/>
+        </div>                                             
       </div>
     );
   }

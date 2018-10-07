@@ -3,7 +3,6 @@
 }
 
 .App {
-  height: 130%;
   text-align: center;
 }
 
@@ -31,18 +30,26 @@ h1{
 }
 
 .adjust-button{
-  margin-top: 35%;
+  margin-top: 25%;
   margin-left: 0%;
   text-align: center;
   max-width: 45%;
 }
 
 .adjust-image{
+  margin: 1em;
   float: right;
   max-width: 45%;
-  max-height: 40%;
-  margin-right: 5%;
-  margin-top:5%;
+}
+p{
+  margin: 1em;
+  display:left;
+  max-width: 45%
+}
+h2{
+  margin: 1em;
+  display:left;
+  max-width: 45%
 }
 
 .real-img{
@@ -53,4 +60,13 @@ h1{
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+h3{
+  font-size: 18px;
+  text-align: center;
+  margin-right:35%;
+  margin-left:35%;
+  margin-top:5%;
+  max-height:10%;
 }
