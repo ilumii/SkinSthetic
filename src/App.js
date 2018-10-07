@@ -171,6 +171,7 @@ handleImage = (reader) => {
               >
               MIZON All In One Snail Repair Cream
               </a>
+              <br></br>
               <a
                href="https://www.amazon.com/Individually-Packaged-Hydrogel-Secretion-Moisturizing/dp/B01KLOS5KQ?keywords=snail+mask&qid=1538923274&sr=8-5&ref=sr_1_5"
               target="_blank"
@@ -195,6 +196,7 @@ handleImage = (reader) => {
               >
               Neutrogena Oil-Free Acne Wash Pink Grapefruit Cream Facial Cleanser
               </a>
+              <br></br>
               <a
                href="https://www.amazon.com/COSRX-Ultra-Moisturizing-Lotion-Birch/dp/B01CLTKI4A?keywords=oil+free+moisturizer+korean&qid=1538923462&sr=8-5&ref=sr_1_5"
               target="_blank"
@@ -210,6 +212,23 @@ handleImage = (reader) => {
             <h2> These are dark circles!</h2>
             <p> Dark circles are caused by fatigue, age, eye strain, allegries, dehydration, sun overexposure, and genetics.
             They are often accompanied by eye bags, and they tend to make you look older than you look. </p>
+            <p>
+              <a
+                href="https://www.amazon.com/Baebody-Appearance-Circles-Puffiness-Wrinkles/dp/B01K2UMMI0?crid=3VMHVFKB41SHM&keywords=dark+circles+under+eye+treatment&qid=1538923530&sprefix=dark+circl%2Caps%2C-1&sr=8-5&ref=sr_1_5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              Baebody Eye Gel for Appearance of Dark Circles, Puffiness, Wrinkles and Bags
+              </a>
+              <br></br>
+              <a
+               href="https://www.amazon.com/Collagen-Purederm-Anti-aging-Properties-Puffiness/dp/B00CTQ0EUY?crid=3VMHVFKB41SHM&keywords=dark+circles+under+eye+treatment&qid=1538923590&sprefix=dark+circl%2Caps%2C-1&sr=8-7&ref=sr_1_7"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              Deluxe Collagen Eye Mask Collagen Pads For Women By Purederm
+              </a>
+            </p>    
           </div>
         ): <div></div>}   
         {this.state.scaring ? (
@@ -217,7 +236,24 @@ handleImage = (reader) => {
             <h2> These are scars!</h2>
             <p>  A scar results from the biologic process of wound repair in the skin and other tissues. 
             Most wounds, except for very minor ones, result in some degree of scarring.
-            Scars can result from accidents, diseases, skin conditions such as acne, or surgeries.</p>            
+            Scars can result from accidents, diseases, skin conditions such as acne, or surgeries.</p>
+            <p>
+              <a
+                href="https://www.amazon.com/Best-Scar-Cream-Face-Treatment/dp/B01M3Y1ZLT?crid=3PBPK16AZ2NH&keywords=acne+scar+remover+cream&qid=1538923664&sprefix=acne+scar+%2Caps%2C168&sr=8-5&ref=sr_1_5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              Best Scar Cream for Face - Vitamin E Oil for Skin After Surgery
+              </a>
+              <br></br>
+              <a
+               href="https://www.amazon.com/Mederma-Advanced-Scar-Gel-Recommended/dp/B001PQBEAI?crid=3PBPK16AZ2NH&keywords=acne+scar+remover+cream&qid=1538923728&sprefix=acne+scar+%2Caps%2C168&sr=8-7&ref=sr_1_7"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              Mederma Advanced Scar Gel 
+              </a>
+            </p>                
           </div>
         ): <div></div>} 
         </div>
