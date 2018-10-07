@@ -99,8 +99,6 @@ handleImage = (reader) => {
   );
 }
 
-
-
   render() {
     return (
       <div className = "App">
@@ -115,6 +113,23 @@ handleImage = (reader) => {
             Blackheads form when a clog or plug develops in the opening of hair follicles in your skin.
             Each follicle contains one hair and a sebaceous gland that produces oil. It appears on the
             back, chest, neck, arms and shoulders.</p>
+            <p>
+              <a
+                href="https://www.amazon.com/St-Ives-Blackhead-Clearing-Scrub/dp/B00M8G8WKY?keywords=blackhead%2Bcleanser&qid=1538923028&sr=8-5&ref=sr_1_5&th=1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              St. Ives Blackhead Clearing Face Scrub, Green Tea
+              </a>
+              <br></br>
+              <a
+               href="https://www.amazon.com/Charcoal-Blackhead-Cleansing-Anti-Aging-Reduction/dp/B07C9G9FCZ?crid=HXFEPTFMYFWX&keywords=blackhead+charcoal+peel+off+mask&qid=1538922940&sprefix=blackhead+charc%2Caps%2C232&sr=8-5&ref=sr_1_5"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              Black Peel off Mask,Charcoal Blackhead Remover Mask
+              </a>
+            </p>
           </div>
         ): <div></div>}
         {this.state.whitehead ? (
@@ -123,14 +138,46 @@ handleImage = (reader) => {
             <p> Whiteheads are a mild form of acne that appear as small, round, white bumps on the skin’s surface. 
             This type of acne occurs when a pore becomes clogged with sebum, dead skin cells, and debris.
             If this clogged pore is covered with a thin layer of skin, it appears white on its surface.
-            Whiteheads commonly appear on the face, shoulders, neck, chest, and back.</p>
+            Whiteheads commonly appear on the face, shoulders, neck, chest, and back. </p>
+            <p>
+              <a
+                href="https://www.amazon.com/Vitamin-Facial-Cleanser-Ingredients-InstaNatural/dp/B00VMYKCL0?keywords=cleanser&qid=1538922851&sr=8-5&ref=sr_1_5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              Vitamin C Facial Cleanser
+              </a>
+              <br></br>
+              <a
+               href="https://www.amazon.com/Benzoyl-Peroxide-Acne-Treatment-Wash/dp/B00PO7GKLM?crid=2C6XQ5X978Q7F&keywords=benzoyl+peroxide&qid=1538923208&sprefix=benzoyl+%2Caps%2C176&sr=8-5&ref=sr_1_5"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              Humane Benzoyl Peroxide 10% Acne Treatment Body & Face Wash
+              </a>
+            </p>
           </div>
         ): <div></div>}   
         {this.state.pigmentation ? (
           <div>
             <h2> These are pigmentations!</h2>
             <p> Skin pigmentations are uneven dark spots on the skin that is caused by sun exposure and UVA rays
-            which penetrates deep into your skin and cause aging. 
+            which penetrates deep into your skin and cause aging. </p>
+            <p>
+              <a
+                href="https://www.amazon.com/MIZON-Snail-Repair-Cream-Grams/dp/B00AF63QQE?keywords=snail+cream&qid=1538923109&sr=8-5&ref=sr_1_5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              MIZON All In One Snail Repair Cream
+              </a>
+              <a
+               href="https://www.amazon.com/Individually-Packaged-Hydrogel-Secretion-Moisturizing/dp/B01KLOS5KQ?keywords=snail+mask&qid=1538923274&sr=8-5&ref=sr_1_5"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              SKEDERM Snail Jelly Face Mask
+              </a>
             </p>
           </div>
         ): <div></div>}
@@ -139,15 +186,25 @@ handleImage = (reader) => {
             <h2> This is acne!</h2>
             <p> Acne is a skin condition that occurs when your hair follicles become plugged with oil and dead skin cells.
             It often causes whiteheads, blackheads or pimples, and usually appears on the face, forehead, chest, upper back and shoulders. 
-            Acne is most common among teenagers, though it affects people of all ages. </p>    
+            Acne is most common among teenagers, though it affects people of all ages. </p>
+            <p>
+              <a
+                href="https://www.amazon.com/Neutrogena-Oil-Free-Grapefruit-Salicylic-Eliminate/dp/B0038ZZV44?crid=1L3NG83G6VXI6&keywords=neutrogena+oilfree+acne+wash&qid=1538923340&sprefix=acne+oilfree%2Caps%2C190&sr=8-5&ref=sr_1_5"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              Neutrogena Oil-Free Acne Wash Pink Grapefruit Cream Facial Cleanser
+              </a>
+              <a
+               href="https://www.amazon.com/COSRX-Ultra-Moisturizing-Lotion-Birch/dp/B01CLTKI4A?keywords=oil+free+moisturizer+korean&qid=1538923462&sr=8-5&ref=sr_1_5"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              COSRX Oil Free Ultra Moisturizing Lotion with Birch Sap
+              </a>
+            </p>    
             </div>
-        ): <div></div>}   
-        {this.state.acnechart ? (
-          <div className = "adjust-image">
-
-          </div>
-        ): <div></div>}   
-        
+        ): <div></div>} 
         {this.state.dark_eye ? (
           <div>
             <h2> These are dark circles!</h2>
